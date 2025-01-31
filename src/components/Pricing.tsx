@@ -27,8 +27,8 @@ const plans = [
   },
   {
     name: "ACCELERATOR",
-    price: "79",
-    yearlyPrice: "64",
+    price: "15.99",
+    yearlyPrice: "12.99",
     period: "per month",
     icon: Rocket,
     features: [
@@ -47,8 +47,8 @@ const plans = [
   },
   {
     name: "TEAM CATALYST",
-    price: "199",
-    yearlyPrice: "159",
+    price: "29.99",
+    yearlyPrice: "23.99",
     period: "per month",
     icon: Users,
     features: [
@@ -80,7 +80,7 @@ const Pricing = () => {
         title="Invest in Your Peace of Mind"
         description="Choose a plan that supports your journey. Because when you're at your best, your business thrives."
       />
-      
+
       <BillingToggle
         isMonthly={isMonthly}
         onToggle={(checked) => setIsMonthly(!checked)}
@@ -100,10 +100,7 @@ const Pricing = () => {
         ))}
       </div>
 
-      <WaitlistFormModal 
-        showModal={showModal}
-        setShowModal={setShowModal}
-      />
+      <WaitlistFormModal showModal={showModal} setShowModal={setShowModal} />
     </div>
   );
 };

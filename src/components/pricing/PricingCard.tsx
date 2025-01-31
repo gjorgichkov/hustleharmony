@@ -30,9 +30,15 @@ interface PricingCardProps {
   onButtonClick: () => void;
 }
 
-export const PricingCard = ({ plan, index, isMonthly, isDesktop, onButtonClick }: PricingCardProps) => {
+export const PricingCard = ({
+  plan,
+  index,
+  isMonthly,
+  isDesktop,
+  onButtonClick,
+}: PricingCardProps) => {
   const PlanIcon = plan.icon;
-  
+
   return (
     <motion.div
       initial={{ y: 50, opacity: 1 }}
@@ -75,15 +81,13 @@ export const PricingCard = ({ plan, index, isMonthly, isDesktop, onButtonClick }
           </span>
         </div>
       )}
-      
+
       <div className="flex-1 flex flex-col">
         <div className="flex items-center justify-center gap-2 mb-4">
           <PlanIcon className="h-6 w-6 text-teal" />
-          <p className="text-base font-semibold text-gray-300">
-            {plan.name}
-          </p>
+          <p className="text-base font-semibold text-gray-300">{plan.name}</p>
         </div>
-        
+
         <div className="mt-6 flex items-center justify-center gap-x-2">
           <span className="text-5xl font-bold tracking-tight text-white">
             <NumberFlow
@@ -91,8 +95,8 @@ export const PricingCard = ({ plan, index, isMonthly, isDesktop, onButtonClick }
               format={{
                 style: "currency",
                 currency: "USD",
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 0,
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
               }}
               transformTiming={{
                 duration: 500,
@@ -137,9 +141,7 @@ export const PricingCard = ({ plan, index, isMonthly, isDesktop, onButtonClick }
         >
           {plan.buttonText}
         </button>
-        <p className="text-xs leading-5 text-gray-400">
-          {plan.description}
-        </p>
+        <p className="text-xs leading-5 text-gray-400">{plan.description}</p>
       </div>
     </motion.div>
   );
